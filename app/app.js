@@ -21,9 +21,12 @@ app.on('window-all-closed', () => {
 app.on('ready', () => {
 	win = new BrowserWindow({
 		width: 500,
-		height: 300,
+		height: 400,
 		resizable: false,
-		show: false
+		show: false,
+		webPreferences: {
+			nodeIntegration: true
+		}
 	});
 	win.once('ready-to-show', () => win.show());
 	win.on('closed', () => win = null);
@@ -36,10 +39,10 @@ app.on('ready', () => {
 	}
 });
 
-ipcMain.on('show-dialog', (e, arg) => {
+ipcMain.on('show-msg', (e, arg) => {
 	dialog.showMessageBox({
 		title: 'Hey dude',
-		message: arg.message,
+		message: arg.msg,
 		buttons: ['OK']
 	});
 });
