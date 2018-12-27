@@ -1,8 +1,16 @@
 'use strict';
 
 const {app, BrowserWindow} = require('electron');
+const path = require('path');
+const reload = require('electron-reload');
+const isDev = require('electron-is-dev');
 
 let win = null;
+
+if (isDev) {
+	const electronPath = path.join(__dirname, 'node_modules', '.bin', 'electron');
+	reload(__dirname, {electron: electronPath});
+}
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
@@ -21,5 +29,5 @@ app.on('ready', () => {
 	win.on('closed', () => win = null);
 
 	win.setMenu(null);
-	win.loadFile('app/index.html');
+	win.loadFile('app/main.html');
 });
