@@ -30,4 +30,8 @@ app.on('ready', () => {
 
 	win.setMenu(null);
 	win.loadFile('app/main.html');
+
+	if (isDev) {
+		win.webContents.openDevTools({detach: true});
+	}
 });
