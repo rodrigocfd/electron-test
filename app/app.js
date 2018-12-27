@@ -1,6 +1,6 @@
 'use strict';
 
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, dialog, ipcMain} = require('electron');
 const path = require('path');
 const reload = require('electron-reload');
 const isDev = require('electron-is-dev');
@@ -34,4 +34,12 @@ app.on('ready', () => {
 	if (isDev) {
 		win.webContents.openDevTools({detach: true});
 	}
+});
+
+ipcMain.on('show-dialog', (e, arg) => {
+	dialog.showMessageBox({
+		title: 'Hey dude',
+		message: arg.message,
+		buttons: ['OK']
+	});
 });
