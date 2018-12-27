@@ -2,12 +2,16 @@
 	"name": "electron-test",
 	"version": "1.0.0",
 	"description": "First Electron app.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rodrigocfd/electron-test.git"
+	},
 	"main": "app/app.js",
 	"scripts": {
 		"start": "electron .",
 		"build-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=palmtree.icns --prune=true --out=release",
 		"build-win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=palmtree.ico --prune=true --out=release --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",
-		"build-linux": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=palmtree.png --prune=true --out=release",
+		"build-linux": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=palmtree.png --prune=true --ignore=release/ --out=release",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
