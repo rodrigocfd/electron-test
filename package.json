@@ -9,9 +9,9 @@
 	"main": "app/app.js",
 	"scripts": {
 		"start": "electron .",
-		"pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=palmtree.icns --prune=true --out=release",
-		"pack-win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=palmtree.ico --prune=true --out=release --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",
-		"pack-lin": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=palmtree.png --prune=true --ignore=release/ --out=release",
+		"pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/palmtree.icns --prune=true --out=release",
+		"pack-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/palmtree.ico --prune=true --out=release --asar=true --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",
+		"pack-lin": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/palmtree.png --prune=true --out=release --asar=true",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {

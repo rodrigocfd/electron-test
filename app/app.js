@@ -14,6 +14,7 @@ if (isDev) { // hot reloading
 
 function createWindow() {
 	win = new BrowserWindow({
+		icon: 'assets/palmtree.png',
 		width: 500,
 		height: 400,
 		resizable: false,
