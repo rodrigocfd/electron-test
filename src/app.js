@@ -27,7 +27,7 @@ function createWindow() {
 	win.on('closed', () => win = null);
 
 	win.setMenu(null);
-	win.loadFile('app/main.html');
+	win.loadFile('src/main.html');
 
 	if (isDev) {
 		win.webContents.openDevTools({detach: true});

@@ -6,7 +6,7 @@
 		"type": "git",
 		"url": "https://github.com/rodrigocfd/electron-test.git"
 	},
-	"main": "app/app.js",
+	"main": "src/app.js",
 	"scripts": {
 		"start": "electron .",
 		"pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/palmtree.icns --prune=true --out=release",
