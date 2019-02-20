@@ -1,18 +1,16 @@
-'use strict';
-
-const {app, BrowserWindow, dialog, ipcMain} = require('electron');
-const path = require('path');
+import {app, BrowserWindow, dialog, ipcMain} from 'electron';
+import * as path from 'path';
 const reload = require('electron-reload');
 const isDev = require('electron-is-dev');
 
-let win = null;
+let win: any = null;
 
 if (isDev) { // hot reloading
 	const electronPath = path.join(__dirname, 'node_modules', '.bin', 'electron');
 	reload(__dirname, {electron: electronPath});
 }
 
-function createWindow() {
+function createWindow(): void {
 	win = new BrowserWindow({
 		icon: 'assets/palmtree.png',
 		width: 500,
@@ -24,7 +22,7 @@ function createWindow() {
 		}
 	});
 	win.once('ready-to-show', () => win.show());
-	win.on('closed', () => win = null);
+	win.on('closed', (): void => win = null);
 
 	win.setMenu(null);
 	win.loadFile('src/main.html');
@@ -48,7 +46,7 @@ app.on('window-all-closed', () => {
 	}
 });
 
-ipcMain.on('show-msg', (e, arg) => {
+ipcMain.on('show-msg', (e: any, arg: any) => {
 	dialog.showMessageBox({
 		title: 'Hey dude',
 		message: arg.msg,

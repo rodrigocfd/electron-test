@@ -1,9 +1,6 @@
-'use strict';
-
-const {ipcRenderer} = require('electron');
-const {dialog} = require('electron').remote;
-const fs = require('fs');
-const $ = require('jquery');
+import {ipcRenderer, remote} from 'electron';
+import * as fs from 'fs';
+import * as $ from 'jquery';
 
 $(document).on('DOMContentLoaded', () => {
 	$('#info').text(`Node ${process.version}`);
@@ -14,7 +11,7 @@ $(document).on('DOMContentLoaded', () => {
 	});
 
 	$('#loadFile').on('click', e => {
-		dialog.showOpenDialog({
+		remote.dialog.showOpenDialog({
 			properties: ['openFile']
 		}, filePaths => {
 			if (filePaths !== undefined) {

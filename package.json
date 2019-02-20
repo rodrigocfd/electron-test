@@ -6,8 +6,9 @@
 		"type": "git",
 		"url": "https://github.com/rodrigocfd/electron-test.git"
 	},
-	"main": "src/app.js",
+	"main": "js-compiled/app.js",
 	"scripts": {
+		"prestart": "tsc",
 		"start": "electron .",
 		"pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/palmtree.icns --prune=true --out=release",
 		"pack-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/palmtree.ico --prune=true --out=release --asar=true --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",
@@ -15,8 +16,11 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
+		"@types/jquery": "^3.3.29",
+		"@types/node": "^11.9.4",
 		"electron": "^3.1.4",
-		"electron-packager": "^13.0.1"
+		"electron-packager": "^13.0.1",
+		"typescript": "^3.3.3"
 	},
 	"dependencies": {
 		"electron-is-dev": "^1.0.1",
