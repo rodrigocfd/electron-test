@@ -1,14 +1,7 @@
 import {app, BrowserWindow, dialog, ipcMain} from 'electron';
-import * as path from 'path';
-const reload = require('electron-reload');
 const isDev = require('electron-is-dev');
 
 let win: any = null;
-
-if (isDev) { // hot reloading
-	const electronPath = path.join(__dirname, 'node_modules', '.bin', 'electron');
-	reload(__dirname, {electron: electronPath});
-}
 
 function createWindow(): void {
 	win = new BrowserWindow({
