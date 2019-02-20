@@ -3,6 +3,7 @@
 const {ipcRenderer} = require('electron');
 const {dialog} = require('electron').remote;
 const fs = require('fs');
+const $ = require('jquery');
 
 $(document).on('DOMContentLoaded', () => {
 	$('#info').text(`Node ${process.version}`);
