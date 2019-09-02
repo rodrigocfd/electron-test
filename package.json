@@ -16,11 +16,11 @@
 	},
 	"devDependencies": {
 		"@types/jquery": "^3.3.31",
-		"@types/node": "^12.7.1",
-		"concurrently": "^4.1.1",
+		"@types/node": "^12.7.3",
+		"concurrently": "^4.1.2",
 		"electron": "^3.1.13",
-		"electron-packager": "^14.0.4",
-		"typescript": "^3.5.3"
+		"electron-packager": "^14.0.5",
+		"typescript": "^3.6.2"
 	},
 	"dependencies": {
 		"electron-is-dev": "^1.1.0",
